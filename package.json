@@ -1,6 +1,6 @@
 {
 	"name": "webfont-preloader",
-	"version": "3.0.0",
+	"version": "3.0.1",
 	"description": "Easily preload font-faces",
 	"repository": {
 		"type": "git",
@@ -38,6 +38,6 @@
 		"example": "example"
 	},
 	"scripts": {
-		"postinstall": "gulp build"
+
 	}
 }
