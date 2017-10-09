@@ -2,9 +2,6 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 
-
-var bower = require('bower-files')();
-
 /* jshint ignore:start */
 var uglifyOptions = {
     mangle: true,

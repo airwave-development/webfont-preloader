@@ -98,6 +98,15 @@ var WebfontPreloader = function WebfontPreloader() {
 		}
 	};
 
+	var timeoutCheck = function timeoutCheck() {
+		preloadComplete = true;
+		self.dispatchCustomEvent('preloadReady', {
+			success: false,
+			error: 'couldNotLoadAllFontsFaces'
+		});
+		cleanPreloader();
+	};
+
 	var cleanPreloader = function cleanPreloader() {
 		clearTimeout(preloadTimeout);
 		clearInterval(preloadInterval);
@@ -162,22 +171,17 @@ var WebfontPreloader = function WebfontPreloader() {
 
 		preloadRunning = true;
 
+		preloadTimeout = setTimeout(function() {
+			timeoutCheck();
+		}, 3000);
+
 		checkPreloaderStatus();
+
 		preloadInterval = setInterval(function() {
 			checkPreloaderStatus();
 		}, 100);
-
-		preloadTimeout = setTimeout(function() {
-			preloadComplete = true;
-			self.dispatchCustomEvent('preloadReady', {
-				success: false,
-				error: 'couldNotLoadAllFontsFaces'
-			});
-			cleanPreloader();
-		}, preloadDefaultTimeout);
 	};
 
-	var preloadDefaultTimeout = 3000;
 	var preloadItems = 0;
 
 	var preloadComplete = false;

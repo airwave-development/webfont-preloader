@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&subset=latin,latin-ext" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	</head>
-	<body>
-        <script src="./dist/webfont-preloader.bundle.min.js"></script>
 
-        <script>
-        (function() {
-            var preloader = new WebfontPreloader();
+<head>
+	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400&subset=latin,latin-ext" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
 
-            preloader.preload('Roboto', '400');
-            preloader.preload('Material Icons', '400');
+<body>
+	<script src="./dist/webfont-preloader.bundle.min.js"></script>
 
-            preloader.on('preloadReady', function(e) {
-                console.log('ready');
-            });
+	<script>
+		(function() {
+			var preloader = new WebfontPreloader();
 
-            preloader.runPreloader();
-        })();
-        </script>
-    </body>
+			preloader.preload('Roboto', '400');
+			preloader.preload('Material Icons', '400');
+
+			preloader.on('preloadReady', function(e) {
+				console.log('ready');
+				preloader.off('preloadReady');
+			});
+
+			preloader.runPreloader();
+		})();
+	</script>
+</body>
+
 </html>
