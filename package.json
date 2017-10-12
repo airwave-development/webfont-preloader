@@ -1,6 +1,6 @@
 {
 	"name": "webfont-preloader",
-	"version": "3.0.2",
+	"version": "3.0.3",
 	"description": "Easily preload font-faces",
 	"repository": {
 		"type": "git",

@@ -178,7 +178,7 @@ var WebfontPreloader = function WebfontPreloader() {
 
 		preloadInterval = setInterval(function() {
 			checkPreloaderStatus();
-		}, 100);
+		}, 50);
 	};
 
 	var preloadItems = 0;
